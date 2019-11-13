@@ -1,0 +1,40 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
+        <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 1</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Exercice 1 - Conversion binaire</li>
+    </ol>
+</nav>
+
+{{#if failure}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Bien essayé!</strong> Mais ce n'est pas le bon mot de passe...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<section class="container">
+    <h1>Conversion binaire</h1>
+    <p>Voici le message à convertir pour découvrir le mot de passe:</p>
+
+    <code>
+        01001001 01010011 01000101 01001110 00100000 01000011 01101000 01100001 01101101 01110000 01101001 01101111 01101110
+        01010011 01101000 01101001 01110000 00100000 00101101 00100000 01000011 01100001 01110000 01110100 01110101 01110010
+        01100101 00100000 01010100 01101000 01100101 00100000 01000110 01101100 01100001 01100111 00100000 00100001
+    </code>
+</section>
+
+<section class="container mt-5">
+    <form action="/run" method="post" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Mot de passe</div>
+            </div>
+            <input type="text" class="form-control" placeholder="123456" name="password">
+        </div>
+        <input type="text" name="team" value="{{{ team }}}" hidden>
+        <button type="submit" class="btn btn-primary ml-2">Valider</button>
+    </form>
+</section>

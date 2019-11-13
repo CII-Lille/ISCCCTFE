@@ -1,0 +1,53 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
+        <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 2</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Exercice 2 - Du morse chiffré</li>
+    </ol>
+</nav>
+
+{{#if failure}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Bien essayé!</strong> Mais ce n'est pas le bon mot de passe...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<section class="container">
+    <h1>Du morse chiffré</h1>
+
+    <p>Le message suivant est en morse, il a été chiffré par un algorithme bien connu</p>
+    <p>Il faut le déchiffrer puis décoder le message en morse pour avoir un message en toutes lettres</p>
+
+    <code>
+        -.. .-- -- .-. ..-. -.-. .--. ..-. --. -... .-.. -.-. -- ..-. .--- --. . .--.
+    </code>
+
+    <h3>Notes</h3>
+    <ul>
+        <li>On utilisera l'alphabet morse réduit allant de "a" à "z", les accents et caractères spéciaux ne sont pas
+            pris en compte</li>
+        <li>La méthode de chiffrements utilisée est l'une des suivantes: <ul>
+                <li>Vigenère</li>
+                <li>Affine</li>
+                <li>César</li>
+                <li>Substitution</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section class="container mt-5">
+    <form action="/run" method="post" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Mot de passe</div>
+            </div>
+            <input type="text" class="form-control" placeholder="J'ai pas envie" name="password">
+        </div>
+        <input type="text" name="team" value="{{{ team }}}" hidden>
+        <button type="submit" class="btn btn-primary ml-2">Valider</button>
+    </form>
+</section>

@@ -1,0 +1,115 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
+        <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 3</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Exercice 3 - Les beaux graphs</li>
+    </ol>
+</nav>
+
+{{#if failure}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Bien essayé!</strong> Mais ce n'est pas le bon mot de passe...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<section class="container">
+    <h1>Les beaux graphs</h1>
+
+    <p>Voici un graph bi-directionnel (préparez-vous. c'est fait pour être chiant)</p>
+
+    <div class="text-center">
+        <img src="/img/graph.png" width="70%" alt="Graph">
+    </div>
+
+    <ul>
+        <li>Les arêtes ont un poids dépendants d'un paramètre temporel <i>t</i> qui a comme valeur initiale 1</li>
+        <li><i>t</i> s'incrémente de 1 après l'empreint d'une arête</li>
+    </ul>
+
+    <p class="font-weight-bold">Il faut partir du point A et aller jusqu'au point R avec un coût total le plus faible
+        possible</p>
+    <p> Donnez ce chemin</p>
+
+    <p>Voici les poids des 34 différentes arêtes en fonction de <i>t</i>: </p>
+
+    <ul>
+        <li>AB(t) = sin(7t - 4) + 12</li>
+        <li>AD(t) = sin(t)</li>
+        <li>BC(t) = 41.49t^3 - 05.5t
+        </li>
+        <li>BE(t) = abs(-t/4.5 + 0.7)
+        </li>
+        <li>BD(t) = cos(sin(tan(t)))
+        </li>
+        <li>CE(t) = e^(0.3t+5)
+        </li>
+        <li>CF(t) = 0.1489t^2 + 0.8954t^1 - 0.57
+        </li>
+        <li>DH(t) = tan(pi*t)</li>
+        <li>DG(t) = 8t - 4
+        </li>
+        <li>EI(t) = 8</li>
+        <li>EH(t) = abs((4 + (((3 * t) * 4))*2 / 2) + ((2)*2 + (3 * 2) + (-(t / t) * (((2)*2)*2)*2) * t))</li>
+        <li>EF(t) = 0.1489t^2 + 0.8954t^1 - 0.57
+        </li>
+        <li>FJ(t) = 0.148t + 48.084
+        </li>
+        <li>IH(t) = 0.84t+32
+        </li>
+        <li>IJ(t) = 42</li>
+        <li>IP(t) = abs(-0.0085t^5 + 0.3544t^4 - 4.2344t^3 + 17.032t^2 - 14.169t + 12.801)</li>
+        <li>IL(t) = abs(724t^3 - 0.01t^2)
+        </li>
+        <li>JM(t) = sin(t)</li>
+        <li>KG(t) = 0.014t + 2
+        </li>
+        <li>KH(t) = 82
+        </li>
+        <li>KL(t) = abs(-0.4t + 25)
+        </li>
+        <li>LH(t) = Fibo(t)</li>
+        <li>LP(t) = 235
+        </li>
+        <li>LO(t) = pi^t
+        </li>
+        <li>MR(t) = 12.0118t^4 - 5.048t^2 + 7.0148t
+        </li>
+        <li>MP(t) = 1.0189t^5 - 2
+        </li>
+        <li>NK(t) = abs(1/((--((3 / t) + (-(2 * 3) * (t)) * (2 * 2)) / (2 * t))) + 1 + 1 + 1 + 5 - 3 + 8 + 13)
+        </li>
+        <li>NO(t) = 15.08/t^3 + 7.057897t^5 - 1.058
+        </li>
+        <li>NQ(t) = 15t + 2
+        </li>
+        <li>OP(t) = 0.1t^2 + 0.3t + 0.5
+        </li>
+        <li>OQ(t) = 17t + 8
+        </li>
+        <li>PQ(t) = 1.5/(((1) * (((t / ((4 * (1) * 2))) / -4)) * 2))*-1 + 55
+        </li>
+        <li>QR(t) = 15</li>
+        <li>PR(t) = 10e^(-.5*t)</li>
+    </ul>
+
+    <h3>Notes</h3>
+    <ul>
+        <li>Le résultat est a donné sous la forme des points empreintés (ex: AZKXMPR)</li>
+    </ul>
+</section>
+
+<section class="container mt-5">
+    <form action="/run" method="post" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Mot de passe</div>
+            </div>
+            <input type="text" class="form-control" placeholder="AZKXMPR" name="password">
+        </div>
+        <input type="text" name="team" value="{{{ team }}}" hidden>
+        <button type="submit" class="btn btn-primary ml-2">Valider</button>
+    </form>
+</section>

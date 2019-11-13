@@ -1,0 +1,71 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
+        <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 3</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Exercice 1 - RSA</li>
+    </ol>
+</nav>
+
+{{#if failure}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Bien essayé!</strong> Mais ce n'est pas le bon mot de passe...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<section class="container">
+    <h1>RSA</h1>
+
+    <table class="table table-hover">
+        <tr>
+            <td class="font-weight-bold">Message</td>
+            <td><code>10410110810811132119111114108100</code></td>
+        </tr>
+        <tr>
+            <td class="font-weight-bold">Message chiffré RSA</td>
+            <td><code>2492924383423754939166319999010775391160856614868599602809960434659988926030169</code></td>
+        </tr>
+        <tr>
+            <td class="font-weight-bold">Module n</td>
+            <td><code>7296552456054641686818770400889668564146779410049773136809042338695679568094721</code></td>
+        </tr>
+    </table>
+
+    <p>Trouvez la clé privée :3</p>
+
+    <!--
+    <h3>Indice</h3>
+    <p>
+        <i>p</i> et <i>q</i> sont de la forme suivante
+    </p>
+
+    <table class="table table-hover">
+        <tr>
+            <td class="font-weight-bold">p</td>
+            <td><code>𝚓𝚊𝚓𝚏𝚌𝚓𝚏𝚎𝚐𝚐𝚑𝚊𝚍𝚍𝚊𝚌𝚐𝚎𝚌𝚓𝚑𝚋𝚋𝚐𝚐𝚌𝚑𝚏𝚒𝚓𝚒𝚐𝚌𝚋𝚌𝚋𝚊𝚌𝚎𝚊</code></td>
+        </tr>
+        <tr>
+            <td class="font-weight-bold">q</td>
+            <td><code>𝚎𝚒𝚎𝚓𝚓𝚐𝚍𝚐𝚋𝚋𝚊𝚊𝚒𝚋𝚊𝚊𝚎𝚏𝚑𝚐𝚎𝚒𝚐𝚏𝚐𝚍𝚑𝚓𝚏𝚏𝚌𝚏𝚑𝚌𝚒𝚊𝚊𝚑𝚒𝚓</code></td>
+        </tr>
+    </table>
+
+    <p>pour <i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>, <i>e</i>, <i>f</i>, <i>g</i>, <i>h</i>, <i>i</i>, <i>j</i> des
+        chiffres (<strong>différents pour <i>q</i> et <i>p</i></strong>)</p>
+-->
+</section>
+
+<section class="container mt-5">
+    <form action="/run" method="post" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Mot de passe</div>
+            </div>
+            <input type="text" class="form-control" placeholder="42" name="password">
+        </div>
+        <input type="text" name="team" value="{{{ team }}}" hidden>
+        <button type="submit" class="btn btn-primary ml-2">Valider</button>
+    </form>
+</section>

@@ -1,0 +1,75 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
+        <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 1</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Exercice 2 - HTML</li>
+    </ol>
+</nav>
+
+{{#if failure}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Bien essayé!</strong> Mais ce n'est pas le bon mot de passe...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<section class="container">
+    <h1>HTML</h1>
+    <p>Quelque part ici, se trouve quelque chose...</p>
+    <!-- En vrai le mot de passe est plus bas dans la page -->
+</section>
+
+<section class="container mt-5">
+    <form action="/run" method="post" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Mot de passe</div>
+            </div>
+            <input type="text" class="form-control" placeholder="123456" name="password">
+        </div>
+        <input type="text" name="team" value="{{{ team }}}" hidden>
+        <button type="submit" class="btn btn-primary ml-2">Valider</button>
+    </form>
+</section>
+
+<!--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed nisi lacus.
+Nullam malesuada dapibus dolor eu gravida. Nulla gravida tincidunt mi sodales lacinia.
+Aliquam semper mollis turpis. Nunc hendrerit tempor consequat. Nunc eget rhoncus felis.
+Curabitur nec malesuada ex. Sed accumsan tortor eu libero ullamcorper hendrerit.
+Donec nec dui eu lacus mattis imperdiet a in magna. Proin mauris dolor, varius eu egestas et, mattis eu quam.
+In hac habitasse platea dictumst.
+
+Sed molestie ligula a eleifend vehicula. Sed in elit a tellus eleifend blandit.
+In tincidunt tortor nec leo accumsan, nec finibus massa malesuada.
+Fusce dolor nulla, dignissim quis elit ac, commodo auctor odio.
+Mauris metus augue, elementum nec congue sed, commodo sed dui.
+Duis ac pulvinar odio. Phasellus maximus at felis ut rutrum. Morbi facilisis libero efficitur dignissim facilisis.
+Cras lorem elit, lacinia vitae libero sed, tempus dignissim ipsum. Aliquam erat volutpat. Suspendisse vel purus felis.
+Ut sed tincidunt justo, ac luctus sem. Vivamus enim felis, convallis nec nulla non, tristique placerat erat.
+Etiam vitae massa eros.
+Mauris finibus, mauris volutpat lobortis viverra, lacus elit scelerisque eros, sit amet consectetur nibh lacus in orci.
+Maecenas quis rhoncus elit.
+
+Phasellus eget leo tempus, mollis nibh cursus, elementum quam. Quisque at aliquet est.
+Suspendisse id fringilla neque. Duis scelerisque tellus lectus, sit amet efficitur ante tempus in.
+Donec libero erat, pretium eget interdum eget, maximus sit amet augue. Mauris euismod feugiat ultricies.
+In nec commodo erat. Maecenas consectetur urna vel enim vulputate egestas.
+Nulla condimentum orci id orci accumsan, sed egestas est aliquet.
+Donec at pharetra libero.
+
+Aliquam ultrices fringilla aliquam. Aliquam vitae urna mauris.
+Praesent sit amet suscipit libero, ac ultricies ante. Proin ac erat tempor, consequat lorem quis, tempor ipsum.
+Suspendisse potenti. Proin quis tortor imperdiet, placerat ligula eu, fringilla tellus.
+Aliquam finibus fermentum fringilla. Duis non turpis auctor nulla ornare venenatis. 
+Phasellus id metus elementum eros 9jW5hXY0nPvynf3HV3c5 porttitor tristique molestie non mauris.
+Aliquam augue lorem, mattis vehicula elementum et, tincidunt ac metus.
+Phasellus nec justo id purus varius mollis ac nec odio. Pellentesque ultrices faucibus fringilla.
+Integer aliquam metus eu mauris faucibus, non pharetra est vulputate. Vestibulum vitae tincidunt ipsum, eget tempus lacus. Aliquam ligula diam, hendrerit ut mi eleifend, tincidunt iaculis turpis. Sed elementum libero vitae pulvinar viverra.
+
+Pellentesque semper ultricies sapien at porttitor. Morbi a nisi felis. Morbi quis est a orci dignissim pharetra.
+Donec cursus vehicula erat ut varius. Etiam quam mi, aliquam sed laoreet in, faucibus eget sapien.
+Maecenas dui diam, dapibus vitae nunc id, scelerisque imperdiet est. Etiam porttitor consequat nulla non lobortis.
+-->

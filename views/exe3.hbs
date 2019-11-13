@@ -1,0 +1,52 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
+        <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 1</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Exercice 3 - Tour de Hanoï</li>
+    </ol>
+</nav>
+
+{{#if failure}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Bien essayé!</strong> Mais ce n'est pas le bon mot de passe...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<section class="container">
+    <h1>Tour de Hanoï</h1>
+
+    <p>Une tour de Hanoï est constituée de 3 bases différentes sur lesquelles on peut déplacer les diques un par un. Un
+        disque ne peut être posé sur un autre plus petit.</p>
+
+    <p>Le but est de déplacer la tour d'une base à une autre</p>
+
+    <div class="text-center">
+        <img src="/img/hanoi.jpeg" alt="Tour de hanoi">
+    </div>
+
+    <p>Combien de déplacements faut-il pour une tour qui posséde n disques ?</p>
+
+    <h3>Notes</h3>
+    <ul>
+        <li>Ecrivez la formule en colant tous les caractères (eg: 4*n+2)</li>
+        <li>Les puissances se notent "^" (eg: 3^2)</li>
+        <li>Les divisions, multiplications, additions, soustractions utilisent leurs symbôles habituels (/, *, +, -)
+        </li>
+    </ul>
+</section>
+
+<section class="container mt-5">
+    <form action="/run" method="post" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Nombre de déplacements</div>
+            </div>
+            <input type="text" class="form-control" placeholder="3" name="moves">
+        </div>
+        <input type="text" name="team" value="{{{ team }}}" hidden>
+        <button type="submit" class="btn btn-primary ml-2">Valider</button>
+    </form>
+</section>

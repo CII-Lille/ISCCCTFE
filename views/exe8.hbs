@@ -1,0 +1,60 @@
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
+        <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 3</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Exercice 2 - Des couleurs</li>
+    </ol>
+</nav>
+
+{{#if failure}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Bien essayé!</strong> Mais ce n'est pas le bon mot de passe...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+<section class="container">
+    <h1>Des couleurs, des couleur partour</h1>
+
+    <table class="table text-center">
+        <tr>
+            <td class="py-5" style="background: #c22265;"><code class="text-light">#c22265</code></td>
+            <td class="py-5" style="background: #516a67;"><code class="text-light">#516a67</code></td>
+            <td class="py-5" style="background: #140a67;"><code class="text-light">#140a67</code></td>
+            <td class="py-5" style="background: #5d2079;"><code class="text-light">#5d2079</code></td>
+        </tr>
+        <tr>
+            <td class="py-5" style="background: #993977;"><code class="text-light">#993977</code></td>
+            <td class="py-5" style="background: #b37977;"><code class="text-light">#b37977</code></td>
+            <td class="py-5" style="background: #863c79;"><code class="text-light">#863c79</code></td>
+            <td class="py-5" style="background: #c13f68;"><code class="text-light">#c13f68</code></td>
+        </tr>
+        <tr>
+            <td class="py-5" style="background: #b79d65;"><code class="text-light">#b79d65</code></td>
+            <td class="py-5" style="background: #338b84;"><code class="text-light">#338b84</code></td>
+            <td class="py-5" style="background: #d21473;"><code class="text-light">#d21473</code></td>
+            <td class="py-5" style="background: #8b7e79;"><code class="text-light">#8b7e79</code></td>
+        </tr>
+        <tr>
+            <td class="py-5" style="background: #60b678;"><code class="text-light">#60b678</code></td>
+            <td class="py-5" style="background: #8d9773;"><code class="text-light">#8d9773</code></td>
+            <td class="py-5" style="background: #72de83;"><code class="text-light">#72de83</code></td>
+            <td class="py-5" style="background: #391084;"><code class="text-light">#391084</code></td>
+        </tr>
+    </table>
+</section>
+
+<section class="container mt-5">
+    <form action="/run" method="post" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Mot de passe</div>
+            </div>
+            <input type="text" class="form-control" placeholder="Pineapple" name="password">
+        </div>
+        <input type="text" name="team" value="{{{ team }}}" hidden>
+        <button type="submit" class="btn btn-primary ml-2">Valider</button>
+    </form>
+</section>
