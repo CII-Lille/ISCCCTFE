@@ -1,17 +1,17 @@
 const TeamModel = require('./team')
 const moment = require('moment')
 
-function exists(name) {
+function exists (name) {
     return TeamModel.findOne({
         name
     })
 }
 
-function create(name) {
+function create (name) {
     const exercise = 0
     const history = []
 
-    let team = new TeamModel({
+    const team = new TeamModel({
         name,
         exercise,
         history
@@ -20,7 +20,7 @@ function create(name) {
     return team.save()
 }
 
-function getExercise(name) {
+function getExercise (name) {
     return TeamModel.findOne({
         name
     }).then(team => {
@@ -28,7 +28,7 @@ function getExercise(name) {
     })
 }
 
-function setExercise(name, value) {
+function setExercise (name, value) {
     return TeamModel.findOne({
         name
     }).then(team => {
@@ -36,13 +36,13 @@ function setExercise(name, value) {
     })
 }
 
-function pass(name) {
+function pass (name) {
     return TeamModel.findOne({
         name
     }).then(team => {
         const date = moment().format('DD/MM/YYYY, hh:mm:ss')
         let exercise = team.exercise
-        let history = team.history
+        const history = team.history
 
         history.push(`[${date}] Exercise ${exercise} validated.`)
         exercise++

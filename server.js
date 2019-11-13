@@ -55,10 +55,12 @@ app.get('/run/:team', (req, res) => {
     }).then(() => {
         teams.getExercise(teamName).then(exerciseId => {
             if (exercise < 0) return res.redirect('/')
-            if (exerciseId >= exercise.files.length) return res.render('done', {
-                team: teamName,
-                layout: 'layouts/main'
-            })
+            if (exerciseId >= exercise.files.length) {
+                return res.render('done', {
+                    team: teamName,
+                    layout: 'layouts/main'
+                })
+            }
 
             return res.render(exercise.files[exerciseId] || 'index', {
                 team: teamName,
@@ -96,10 +98,14 @@ app.post('/run', (req, res) => {
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    connectTimeoutMS: 5000
 }).then(() => {
     server.listen(app.get('port'), () => {
         console.log(`Listening on ${app.get('port')}`)
         console.log(`Local: http://localhost:${app.get('port')}`)
     })
+}).catch((err) => {
+    console.log(`Server didn't start due to the following error: ${err.name}`)
+    console.log('\nPlease check that your database is up')
 })

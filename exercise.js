@@ -11,7 +11,7 @@ const files = [
     'exe9.hbs'
 ]
 
-function validate(exercise, values) {
+function validate (exercise, values) {
     if (exercise < 0 || exercise >= answers.length) return false
 
     const expected = answers[exercise]
