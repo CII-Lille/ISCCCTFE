@@ -4,7 +4,7 @@
   "description": "ISEN ChampionShip - Capture The Flag 2019",
   "main": "server.js",
   "scripts": {
-    "db": "mongod --dbpath=db",
+    "db": "mongod --dbpath=db --port 27018",
     "dev": "nodemon ./server.js",
     "start": "node ./server.js",
     "watch": "nodemon --watch . --exec \"npm run test && npm run start\"",
