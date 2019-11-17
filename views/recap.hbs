@@ -1,0 +1,78 @@
+<section class="jumbotron text-center">
+    <div class="text-left">
+        <a class="btn btn-outline-primary" href="/run/{{ team }}">← Retour aux exos</a>
+    </div>
+
+    <h1 class="display-1">Récapitulatif</h1>
+    <h2>Equipe: {{{ team }}}</h2>
+
+    <table class="table table-hover text-left">
+        <thead>
+            <tr>
+                <th>Exercice</th>
+                <th>Validé</th>
+                <th>Indice</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>1.1 - Conversion binaire</td>
+            <td>{{#if recap.exe1 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe1 }}https{{/if}}</td>
+        </tr>
+        <tr>
+            <td>1.2 - HTML</td>
+            <td>{{#if recap.exe2 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe2 }}://di{{/if}}</td>
+        </tr>
+        <tr>
+            <td>1.3 - Tour de Hanoï</td>
+            <td>{{#if recap.exe3 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe3 }}vinis{{/if}}</td>
+        </tr>
+        <tr>
+            <td>2.1 - Code César</td>
+            <td>{{#if recap.exe4 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe4 }}en.fr{{/if}}</td>
+        </tr>
+        <tr>
+            <td>2.2 - Du morse chiffré</td>
+            <td>{{#if recap.exe5 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe5 }}/CTF/{{/if}}</td>
+        </tr>
+        <tr>
+            <td>2.3 - SHA-1</td>
+            <td>{{#if recap.exe6 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe6 }}ialway{{/if}}</td>
+        </tr>
+        <tr>
+            <td>3.1 - RSA</td>
+            <td>{{#if recap.exe7 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe7 }}swante{{/if}}</td>
+        </tr>
+        <tr>
+            <td>3.2 - Des couleurs</td>
+            <td>{{#if recap.exe8 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe8 }}dtobea{{/if}}</td>
+        </tr>
+        <tr>
+            <td>3.3 - Les beaux graphs</td>
+            <td>{{#if recap.exe9 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe9 }}baker{{/if}}</td>
+        </tr>
+        <tr>
+            <td>4.1 - Surprise 1</td>
+            <td>{{#if recap.exe10 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe10 }}Nop{{/if}}</td>
+        </tr>
+        <tr>
+            <td>4.2 - Surprise 2</td>
+            <td>{{#if recap.exe11 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe11 }}Nop{{/if}}</td>
+        </tr>
+        <tr>
+            <td>4.3 - Surprise 3 - C'est la fin</td>
+            <td>{{#if recap.exe12 }}👍{{ else }}❌{{/if}}</td>
+            <td>{{#if recap.exe12 }}Nop{{/if}}</td>
+        </tr>
+    </table>
+</section>

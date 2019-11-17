@@ -8,10 +8,13 @@ const files = [
     'exe6.hbs',
     'exe7.hbs',
     'exe8.hbs',
-    'exe9.hbs'
+    'exe9.hbs',
+    'exe10.hbs',
+    'exe11.hbs',
+    'exe12.hbs'
 ]
 
-function validate (exercise, values) {
+function validate(exercise, values) {
     if (exercise < 0 || exercise >= answers.length) return false
 
     const expected = answers[exercise]

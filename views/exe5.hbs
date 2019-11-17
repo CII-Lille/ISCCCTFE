@@ -3,6 +3,7 @@
         <li class="breadcrumb-item"><a href="/">Capture The Flag</a></li>
         <li class="breadcrumb-item"><a href="/run/{{{team}}}">Palier 2</a></li>
         <li class="breadcrumb-item active" aria-current="page">Exercice 2 - Du morse chiffré</li>
+        <li class="btn btn-outline-primary ml-auto"><a href="/recap/{{{ team }}}">Récapitulatif</a></li>
     </ol>
 </nav>
 
@@ -19,13 +20,14 @@
     <h1>Du morse chiffré</h1>
 
     <p>Le message suivant est en morse, il a été chiffré par un algorithme bien connu</p>
-    <p>Il faut le déchiffrer puis décoder le message en morse pour avoir un message en toutes lettres</p>
+    <p>Il faut le déchiffrer puis décoder le message en morse pour avoir un message constitué des lettres de l'alphabet
+        habituel</p>
 
     <code>
         -.. .-- -- .-. ..-. -.-. .--. ..-. --. -... .-.. -.-. -- ..-. .--- --. . .--.
     </code>
 
-    <h3>Notes</h3>
+    {{!-- <h3>Notes</h3>
     <ul>
         <li>On utilisera l'alphabet morse réduit allant de "a" à "z", les accents et caractères spéciaux ne sont pas
             pris en compte</li>
@@ -36,7 +38,7 @@
                 <li>Substitution</li>
             </ul>
         </li>
-    </ul>
+    </ul> --}}
 </section>
 
 <section class="container mt-5">

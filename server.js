@@ -72,6 +72,24 @@ app.get('/run/:team', (req, res) => {
     })
 })
 
+app.get('/recap/:team', (req, res) => {
+    const teamName = req.params.team
+
+    return teams.exists(teamName).then(result => {
+        if (!result) return Promise.reject(Error("Team doesn't exists"))
+    }).then(() => {
+        teams.getRecap(teamName).then(recap => {
+            return res.render('recap.hbs', {
+                team: teamName,
+                recap,
+                layout: 'layouts/main'
+            })
+        })
+    }).catch(() => {
+        res.redirect('/')
+    })
+})
+
 app.post('/run', (req, res) => {
     const teamName = req.body.team
     const answers = req.body

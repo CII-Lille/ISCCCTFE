@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "db": "mongod --dbpath=db --port 27018",
+    "db-clean": "rm -rf db && mkdir db && npm run db",
     "dev": "nodemon ./server.js",
     "start": "node ./server.js",
     "watch": "nodemon --watch . --exec \"npm run test && npm run start\"",
