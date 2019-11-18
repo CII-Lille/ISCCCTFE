@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DEMO</title>
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Exercice actuel</th>
+                    <th>Dernier validé</th>
+                    <th>Points (sans bonus)</th>
+                </tr>
+            </thead>
+            {{#each data}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{exercise}}</td>
+                <td>{{last}}</td>
+                <td>{{points}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/font-awesome.min.js"></script>
+</body>
+
+</html>

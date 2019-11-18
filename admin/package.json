@@ -1,0 +1,32 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./server.js",
+    "start": "node ./server.js",
+    "watch": "nodemon --watch . --exec \"npm run test && npm run start\"",
+    "test": "eslint *.js --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "express-password-protect": "^1.0.2",
+    "express-session": "^1.17.0",
+    "hbs": "^4.0.6",
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.11"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^1.19.4"
+  }
+}
