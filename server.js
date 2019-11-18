@@ -28,6 +28,11 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/drop', (req, res) => {
+    teams.drop()
+    res.redirect('/')
+})
+
 app.post('/start', (req, res) => {
     if (req.body.team) {
         const teamName = req.body.team
@@ -62,7 +67,9 @@ app.get('/run/:team', (req, res) => {
                 })
             }
 
-            return res.render(exercise.files[exerciseId] || 'index', {
+            return res.render('demo/demo' || 'index', {
+                palier: Math.floor(exerciseId / 3) + 1,
+                exercise: (exerciseId % 3) + 1,
                 team: teamName,
                 layout: 'layouts/main'
             })
@@ -98,18 +105,23 @@ app.post('/run', (req, res) => {
         if (team === null) return Promise.reject(Error("Team doesn't exists"))
         return team
     }).then(team => {
-        if (exercise.validate(team.exercise, answers)) {
+        if (answers['password'] && (answers['password']).toUpperCase() === 'demo'.toUpperCase()) {
             teams.pass(teamName).then(() => {
                 return res.redirect(`/run/${teamName}`)
             })
         } else {
-            return res.render(exercise.files[team.exercise] || 'index', {
-                team: teamName,
-                failure: true,
-                layout: 'layouts/main'
+            return teams.getExercise(teamName).then(exerciseId => {
+                return res.render('demo/demo', {
+                    palier: Math.floor(exerciseId / 3) + 1,
+                    exercise: (exerciseId % 3) + 1,
+                    team: teamName,
+                    failure: true,
+                    layout: 'layouts/main'
+                })
             })
         }
-    }).catch(() => {
+    }).catch((err) => {
+        console.log(err)
         return res.redirect('/')
     })
 })

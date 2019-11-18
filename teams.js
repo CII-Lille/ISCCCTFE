@@ -1,13 +1,14 @@
 const TeamModel = require('./team')
 const moment = require('moment')
+const mongoose = require('mongoose')
 
-function exists (name) {
+function exists(name) {
     return TeamModel.findOne({
         name
     })
 }
 
-function create (name) {
+function create(name) {
     const exercise = 0
     const history = []
 
@@ -20,7 +21,7 @@ function create (name) {
     return team.save()
 }
 
-function getExercise (name) {
+function getExercise(name) {
     return TeamModel.findOne({
         name
     }).then(team => {
@@ -28,7 +29,7 @@ function getExercise (name) {
     })
 }
 
-function getRecap (name) {
+function getRecap(name) {
     return TeamModel.findOne({
         name
     }).then(team => {
@@ -38,7 +39,7 @@ function getRecap (name) {
     })
 }
 
-function setExercise (name, value) {
+function setExercise(name, value) {
     return TeamModel.findOne({
         name
     }).then(team => {
@@ -46,7 +47,7 @@ function setExercise (name, value) {
     })
 }
 
-function pass (name) {
+function pass(name) {
     return TeamModel.findOne({
         name
     }).then(team => {
@@ -64,11 +65,16 @@ function pass (name) {
     })
 }
 
+function drop() {
+    return mongoose.connection.db.dropDatabase();
+}
+
 module.exports = {
     exists,
     create,
     getExercise,
     getRecap,
     setExercise,
-    pass
+    pass,
+    drop
 }
