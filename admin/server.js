@@ -37,8 +37,9 @@ function getLast(history) {
 
 function getPoints(team) {
     let exercise = team.exercise
-
-    return exercise * (exercise + 1) / 2
+    if (team.exercise < 10)
+        return exercise * (exercise + 1) / 2
+    return 10 * 11 / 2 + 10 * (team.exercise - 9)
 }
 
 app.use((req, res) => {
