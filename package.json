@@ -13,17 +13,6 @@
   },
   "author": "Gautier Miquet <gautier.miquet@isen.yncrea.fr>",
   "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.4",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.0",
-    "hbs": "^4.0.6",
-    "moment": "^2.24.0",
-    "mongoose": "^5.7.7",
-    "socket.io": "^2.3.0"
-  },
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
@@ -33,5 +22,16 @@
     "eslint-plugin-standard": "^4.0.1",
     "nodemon": "^1.19.4",
     "parallel": "^1.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.11",
+    "socket.io": "^3.0.5"
   }
 }
